@@ -9,6 +9,7 @@ function celsiusToFahrenheit(celsiusTemp: number){
 function fahrenheitToCelsius(fahrenheitTemp: number){
     return (fahrenheitTemp - 32) * 5/9
 }
+console.log("\t Welcome to Temperature Converter By Syed Ali Hussain")
 let isRunning = true;
 START: 
 while(isRunning){

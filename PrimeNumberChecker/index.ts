@@ -9,6 +9,8 @@ function isPrime(number: number): boolean {
     }
     return true;
 }
+
+console.log("\t Welcome to Prime Number Checker by Syed Ali Hussain")
 let isRunning = true;
 START:
 while(isRunning){

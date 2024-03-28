@@ -11,6 +11,7 @@ function factorial(n: number): number{
     
         
 }
+console.log("\t Welcome to Factorial Calculator by Syed Ali Hussain")
 let isRunning = true;
 START:
 while(isRunning){

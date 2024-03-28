@@ -1,4 +1,5 @@
 import inquirer from "inquirer";
+// Prime Number Checker By Syed Ali Hussain
 function isPrime(number) {
     if (number <= 1)
         return false;
@@ -8,6 +9,7 @@ function isPrime(number) {
     }
     return true;
 }
+console.log("\t Welcome to Prime Number Checker by Syed Ali Hussain");
 let isRunning = true;
 START: while (isRunning) {
     let answer = await inquirer.prompt([

@@ -11,6 +11,7 @@ function generateFibonacciSequence(n) {
     }
     return fibonacciSeries;
 }
+console.log("\t Welcome to Fibonacci Sequence Generator by Syed Ali Hussain");
 let isRunning = true;
 START: while (isRunning) {
     let answer = await inquirer.prompt([

@@ -1,4 +1,5 @@
 // FizzBuzz by Syed Ali Hussain
+console.log("\t Welcome to FizzBuzz by Syed Ali Hussain")
 
 for(let i = 1; i <= 100; i++){
     if(i % 3 == 0 && i % 5 == 0){

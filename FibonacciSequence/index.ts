@@ -14,7 +14,7 @@ function generateFibonacciSequence(n: number): number[]{
     }
     return fibonacciSeries
 }
-
+console.log("\t Welcome to Fibonacci Sequence Generator by Syed Ali Hussain")
 let isRunning = true;
 
 START:

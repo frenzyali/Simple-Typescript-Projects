@@ -14,13 +14,33 @@ function palindromeCheck(word: string){
         console.log("It is not a Palindrome")
     }
 }
-
-let answer = await inquirer.prompt([
-    {
-        type: "input",
-        name: "word",
-        message: "Enter your word: "
+console.log("\t Welcome to Palindrome Calculator by Syed Ali Hussain")
+let isRunning = true;
+START:
+while(isRunning){
+    let answer = await inquirer.prompt([
+        {
+            type: "input",
+            name: "word",
+            message: "Enter your word: "
+        }
+    ])
+    palindromeCheck(answer.word)
+    
+    let answer2 = await inquirer.prompt([
+        {
+            type: "list",
+            name: "option",
+            message: "> What do you want to do?",
+            choices: ["Exit", "Continue"]
+        }
+    ])
+    if(answer2.option == "Exit"){
+        console.clear()
+        console.log("> Goodbye");
+        isRunning = false;
+    }else if(answer2.option == "Continue"){
+        console.clear()
+        continue START;
     }
-])
-
-palindromeCheck(answer.word)
+}

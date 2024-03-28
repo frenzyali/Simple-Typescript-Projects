@@ -1,6 +1,7 @@
 // BMI Calculator by Syed Ali Hussain
 import inquirer from "inquirer";
 let isRunning = true;
+console.log("\t Welcome to BMI Calculator by Syed Ali Hussain");
 START: while (isRunning) {
     let answer = await inquirer.prompt([
         {
@@ -14,20 +15,26 @@ START: while (isRunning) {
             message: "Enter your height in centimeters: "
         }
     ]);
-    let height_in_meters = parseFloat(answer.height) / 100;
-    let bmi = parseInt(answer.weight) / ((height_in_meters) ** 2);
-    bmi = Math.round(bmi * 10) / 10;
-    if (bmi < 18.5) {
-        console.log(`Your BMI is ${bmi}. You are underweight.`);
+    if (answer.weight > 0 && answer.height > 0 && !isNaN(answer.height) && !isNaN(answer.weight)) {
+        let height_in_meters = parseFloat(answer.height) / 100;
+        let bmi = parseInt(answer.weight) / ((height_in_meters) ** 2);
+        bmi = Math.round(bmi * 10) / 10;
+        if (bmi < 18.5) {
+            console.log(`Your BMI is ${bmi}. You are underweight.`);
+        }
+        else if (bmi >= 18.5 && bmi <= 24.9) {
+            console.log(`Your BMI is ${bmi}. You are healthy.`);
+        }
+        else if (bmi >= 25 && bmi <= 29.9) {
+            console.log(`Your BMI is ${bmi}. You are overweight.`);
+        }
+        else if (bmi > 30) {
+            console.log(`Your BMI is ${bmi}. You are obese.`);
+        }
     }
-    else if (bmi >= 18.5 && bmi <= 24.9) {
-        console.log(`Your BMI is ${bmi}. You are healthy.`);
-    }
-    else if (bmi >= 25 && bmi <= 29.9) {
-        console.log(`Your BMI is ${bmi}. You are overweight.`);
-    }
-    else if (bmi > 30) {
-        console.log(`Your BMI is ${bmi}. You are obese.`);
+    else {
+        console.log("Invalid Input");
+        continue START;
     }
     let answer2 = await inquirer.prompt([
         {
