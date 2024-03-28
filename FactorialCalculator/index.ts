@@ -21,7 +21,7 @@ while(isRunning){
             message: "> Enter a non negative integer you want to get the factorial of: ",
         }
     ])
-    if(answer.option >= 0 || typeof(answer.option) != typeof(1)){
+    if(answer.option >= 0 && !isNaN(answer.option)){
         console.log(`> The factorial of ${answer.option} is: ` + factorial(answer.option));
     }else{
         console.log("Invalid input")
